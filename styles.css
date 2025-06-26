@@ -1,0 +1,433 @@
+/* Body styles */
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* menu styles */
+.menu {
+    font-family: 'Montserrat', Arial, sans-serif;
+    list-style: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #506F70;
+    border-radius: 5px;
+    box-shadow: #333 0px 2px 5px;
+    margin-bottom: 20px;
+}
+
+.menu-list {
+    margin: 0 10px;
+    list-style: none;
+    display: inline;
+    color: white;
+}
+.menu-list a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    display: inline-block;
+}
+.menu-list a:hover {
+    color: #2FF5B9;
+    text-decoration: none;
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.menu-toggle {
+    display: none;
+}
+
+/* telas pequenas */
+@media (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        padding-top: 10px;
+    }
+    .nome-destaque {
+        font-size: 1.2em;
+    }
+    .menu {
+        flex-direction: column;
+        padding: 2px;
+        margin: 5px 0;
+        display: none;
+        width: 100%;
+    }
+    .menu-toggle {
+        display: block;
+        background: #506F70;
+        color: white;
+        border: none;
+        font-size: 2em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px auto;
+        cursor: pointer;
+    }
+    .menu.open {
+        display: flex;
+    }
+    .menu-list {
+        margin: 2px 0;
+        text-align: center;
+    }
+    .menu-list a {
+        padding: 6px 8px;
+        font-size: 0.95em;
+    }
+    main {
+        padding: 8px;
+    }
+    .modulo, #skillbar.modulo {
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+    .progress-bar {
+        height: 18px;
+    }
+    .progress {
+        font-size: 0.9em;
+        padding-right: 5px;
+    }
+    .contato-list {
+        flex-direction: column;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+    }
+    .contato-list li {
+        flex-direction: column;
+        gap: 4px;
+        padding: 4px;
+        margin: 8px 0;
+        margin-right: 0;
+        margin-bottom: 6px;
+        font-size: 1em;
+    }
+
+    .projetos-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .status {
+        margin-left: 0;
+        align-self: flex-end;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* Esconde o botão do menu em telas grandes */
+.menu-toggle {
+    display: none;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+body h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+/* imagem styles */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+    object-fit: cover;
+    padding-top: 30px;
+}
+/*Nome principal*/
+.nome {
+    color: #506F70;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+.nome-destaque {
+    color: #358B72;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 2em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: uppercase;
+    background: none;
+    text-shadow: none;
+}
+body p {
+    text-indent: 2em;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+/* Destaque para parágrafos importantes */
+p.destaque {
+    background: #f0f7fa;
+    border-left: 4px solid #506F70;
+    padding: 10px 16px;
+    margin: 24px 0; /* Espaçamento acima e abaixo */
+    font-weight: 500;
+}
+
+/* Header styles */
+header {
+    background-color: #506F70;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: #333 0px 2px 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Main content styles */
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: solid #506F70 2px;
+}
+
+
+
+/* Módulos */
+.modulo {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.23,1.02,.64,1);
+}
+
+.modulo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modulo-titulo {
+    font-size: 1.7em;
+    color: #506F70;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 6px solid #2FF5B9;
+    padding-left: 12px;
+    background: linear-gradient(90deg, #f0f7fa 60%, transparent 100%);
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 1px;
+    transition: box-shadow 0.3s;
+}
+
+/* Experiências */
+.experiencia-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.experiencia-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 1.08em;
+    color: #506F70;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.experiencia-list li:last-child {
+    border-bottom: none;
+}
+
+.experiencia-list i {
+    color: #2FF5B9;
+    min-width: 22px;
+    font-size: 1.2em;
+}
+
+.modulo-titulo span {
+    color: #358B72;
+    font-weight: bold;
+}
+
+/* Projetos */
+.projetos-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.projetos-list li {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 1.08em;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.projetos-list li:last-child {
+    border-bottom: none;
+}
+
+.projetos-list i {
+    min-width: 22px;
+    font-size: 1.2em;
+}
+
+.projeto-concluido i,
+.projeto-concluido strong,
+.projeto-concluido .status {
+    color: #2ecc40;
+}
+.projeto-em-desenvolvimento i,
+.projeto-em-desenvolvimento strong,
+.projeto-em-desenvolvimento .status {
+    color: #ffb300;
+}
+.projeto-planejado i,
+.projeto-planejado strong,
+.projeto-planejado .status {
+    color: #0074d9;
+}
+.status {
+    margin-left: auto;
+    font-size: 0.95em;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: #f4f4f4;
+    max-width: 120px;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+}
+.projeto-concluido .status {
+    background: #eafbe7;
+}
+.projeto-em-desenvolvimento .status {
+    background: #fff8e1;
+}
+.projeto-planejado .status {
+    background: #e7f0fa;
+}
+
+/* progress bar styles */
+
+#skillbar.modulo {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+#skillbar.modulo h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.skill{
+    margin-bottom: 15px;
+}
+.progress-bar {
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 24px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.progress {
+    background: linear-gradient(90deg, #273632 0%, #356154 50%, #358B72 100%);
+    color: #fff;
+    height: 100%;
+    line-height: 24px;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 20px 0 0 20px;
+    font-weight: bold;
+    transition: width 1s;
+    width: 0;
+}
+
+/* footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #273233;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* contact styles */
+.contato-list {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.contato-list li {
+    display: inline;
+    margin-right: 30px;
+    color: #48CAA3;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+.contato-list a {
+    color: #506F70;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 30px;
+    display: inline-block;
+}
+.contato-list li:hover {
+    color: #2FF5B9;
+    text-decoration: none;
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
