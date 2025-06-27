@@ -60,29 +60,47 @@ document.addEventListener("DOMContentLoaded", function() {
     const progressBars = document.querySelectorAll('#skillbar .progress');
     let animating = false;
 
-    function animateBar(bar, target) {
-        let current = 0;
-        const duration = 1000; // duração total da animação em ms
-        const stepTime = 10;
-        const steps = Math.floor(duration / stepTime);
-        const increment = target / steps;
-        clearInterval(bar._interval);
-        bar._interval = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(bar._interval);
-            }
-            bar.style.width = current + "%";
-            bar.textContent = Math.round(current) + "%";
-        }, stepTime);
+function animateBar(bar, target) {
+    if (bar.classList.contains('idioma')) {
+        // Para barras de idioma, apenas define a largura final sem animar
+        bar.style.width = bar.getAttribute('data-width');
+        return;
     }
+    let current = 0;
+    const duration = 1000;
+    const stepTime = 10;
+    const steps = Math.floor(duration / stepTime);
+    const increment = target / steps;
+    clearInterval(bar._interval);
+    bar.style.width = "0"; // Garante que a barra começa do zero
+    bar._interval = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(bar._interval);
+        }
+        bar.style.width = current + "%";
+        bar.textContent = Math.round(current) + "%";
+    }, stepTime);
+}
 
-    function resetBar(bar) {
-        clearInterval(bar._interval);
-        bar.style.width = "0";
-        bar.textContent = "0%";
+progressBars.forEach(bar => {
+    const dataWidth = bar.getAttribute('data-width');
+    if (bar.classList.contains('idioma')) {
+        // Para idioma, só define a largura
+        bar.style.width = dataWidth;
+    } else {
+        const target = parseInt(dataWidth);
+        animateBar(bar, target);
     }
+});
+
+function resetBar(bar) {
+    if (bar.classList.contains('idioma')) return; // Não reseta barras de idioma
+    clearInterval(bar._interval);
+    bar.style.width = "0";
+    bar.textContent = "0%";
+}
 
     function checkModulos() {
         modulos.forEach(modulo => {
