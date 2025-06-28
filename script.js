@@ -129,3 +129,11 @@ function resetBar(bar) {
     window.addEventListener('scroll', checkModulos);
     checkModulos();
 });
+
+if (response.ok) {
+    document.getElementById('form-mensagem').style.display = 'block';
+    document.getElementById('form-erro').style.display = 'none';
+    form.reset();
+    } else {
+    document.getElementById('form-erro').style.display = 'block';
+}
